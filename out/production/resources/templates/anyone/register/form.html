@@ -1,0 +1,21 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+</head>
+<body>
+<h1 th:text="'register_form'"></h1>
+<form th:action="@{/anyone/register}" th:method="'post'">
+    <span th:text="'email'"/><input type="text" th:name="'email'"/>
+    <span th:text="'password'"/><input type="text" th:name="'password'"/>
+    <span th:text="'role'"/><input type="text" th:name="'role'"/>
+    <span th:text="'nick'"/><input type="text" th:name="'nick'"/>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <button type="submit" th:text="'submit'"></button>
+</form>
+<a th:href="@{/}" th:text="'home'"></a>
+</body>
+</html>
